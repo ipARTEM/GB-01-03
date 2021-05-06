@@ -10,11 +10,12 @@ namespace Task02
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Программа телефонный справочник");
-
+            Console.WriteLine("*** Программа телефонный справочник ***");
+            Console.WriteLine();
+            Console.WriteLine(" Имя    Тетефон");
             Random random = new Random();
 
-            int number = random.Next(9999999);
+            //int number = random.Next(9999999);
 
             string[] name = new string[] {"Саша","Петя", "Вася", "Коля", "Толя" }; 
 
@@ -25,8 +26,16 @@ namespace Task02
             {
                 for (int j = 0; j < phoneDirectory.GetLength(1); j++)
                 {
-                    phoneDirectory[i, j] = Convert.ToString( random.Next(9999999));
-                    Console.WriteLine(phoneDirectory[i, j]);
+                    if (j==0)
+                    {
+                        Console.Write(" "+name[i].ToString()+"   ");
+                    }
+                    else
+                    {
+                        phoneDirectory[i, j] = Convert.ToString(random.Next(1111111, 9999999));
+                        Console.Write(phoneDirectory[i, j]);
+                    }
+                    
 
                 }
                 Console.WriteLine();
